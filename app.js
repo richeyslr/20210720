@@ -82,7 +82,7 @@ alert("The correct answer is 7!");
 
 for (i=0; i < 6; i++){
   let answerSeven = prompt("Can you name one of my 10 favorite Memphis Grizzlies players?").toLowerCase();
-  if (answerSeven == favGrizzlies[0] || answerSeven == favGrizzlies[1] || answerSeven == favGrizzlies[2] || answerSeven == favGrizzlies[3] || answerSeven == favGrizzlies[4] || answerSeven == favGrizzlies[5] || answerSeven == favGrizzlies[6] || answerSeven == favGrizzlies[7] || answerSeven == favGrizzlies[8] || answerSeven == favGrizzlies[9]){
+  if (favGrizzlies.indexOf(answerSeven) > -1 || favGrizzlies.indexOf(answerSeven) > 9){
     alert("Correct! He's definitely in my top 10!");
     correctGuesses++;
     break;
