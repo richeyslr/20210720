@@ -1,13 +1,16 @@
+// declaring an array of my favorite grizzlies to use later
 let favGrizzlies = ["shane battier", "ja morant", "tony allen", "pau gasol", "mike conley", "stromile swift", "mike miller", "vince carter", "zach randolph", "jason williams"];
 
+// runs the greeting function, which asks the user their name and greets them to the page
 function greeting(){
   let userName = prompt("Hi! What is your name?");
 alert("Welcome to my About Me Site, " + userName + ".");
 alert("You are about to take a quiz, " + userName + ", but you might not know the answers yet! Make your best guess.");
 }
 
+// starts the guessing game on the click of the take quiz button
 function takeQuiz(){
-  let correctGuesses = 0;
+  let correctGuesses = 0; //tracks number of questions correctly guessed
   alert("Respond with yes/no or y/n!")
   let answerOne = prompt("Was I born and raised in Memphis, TN?").toLowerCase();
   if(answerOne == "n" || answerOne == "no"){
@@ -59,7 +62,7 @@ function takeQuiz(){
     alert("Incorrect! Well, not totally incorrect, but I do enjoy reading interesting things.");
   }
 
-// let answerSix = prompt("How old was I when I first started playing tennis? You have 4 tries.");
+// gives the user 4 guesses to get correct number. returns if guess is too high or low.
 for (i=0; i < 4; i++){
   let answerSix = prompt("How old was I when I first started playing tennis? You have 4 tries.");
   if (answerSix >= 8){
@@ -79,10 +82,12 @@ for (i=0; i < 4; i++){
 }
 alert("The correct answer is 7!");
 
-
+// gives the user 6 guesses at one of my favorite grizzlies, defined in array at the top
 for (i=0; i < 6; i++){
   let answerSeven = prompt("Can you name one of my 10 favorite Memphis Grizzlies players?").toLowerCase();
-  if (favGrizzlies.indexOf(answerSeven) > -1 || favGrizzlies.indexOf(answerSeven) > 9){
+
+  // compares the user's guess to the index of my favorite grizzlies array and returns position in the array. if answer not in the array returns -1.
+  if (favGrizzlies.indexOf(answerSeven) > -1 || favGrizzlies.indexOf(answerSeven) > favGrizzlies.length - 1){
     alert("Correct! He's definitely in my top 10!");
     correctGuesses++;
     break;
@@ -91,7 +96,9 @@ for (i=0; i < 6; i++){
     alert("Sorry, he didn't make the cut.");
   }
 }
+// lists fav grizzlies array
 alert("My top 10 favorite Grizzlies in no order are: " + favGrizzlies);
+// alerts user of their score
 alert("You guessed " + correctGuesses + " out of 7 correctly.");
 
 // console.log(correctGuesses);
